@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h5><a class="card-title" href="{% url 'problemset-problem' %}">{{ problem.title }}</h5>
                     <p class="card-text">Points = {{problem.points}} </p>
-                    <a href="#" class="btn btn-primary">Submit Your Code</a>
+                    <a href="{% url 'problemset-submit_code' %}" class="btn btn-primary">Submit Your Code</a>
                 </div>
                 </div>
             </div>

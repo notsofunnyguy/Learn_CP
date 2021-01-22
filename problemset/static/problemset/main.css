@@ -11,7 +11,11 @@ h1, h2, h3, h4, h5, h6 {
 ul {
   margin: 0;
 }
-
+#editor {
+        position: relative;
+        width: 1000px;
+        height: 500px;
+}
 .bg-steel {
   background-color: #000000;
 }
