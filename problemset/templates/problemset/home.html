@@ -1,25 +1,22 @@
 {% extends "problemset/base.html"%}
 {% block content %}
-<div style="background:rgb(16, 150, 173)">
-<div class="container pt-4">
-<h1>Learn_CP - Home</h1>
-<hr>
+<div class="container-fluid">
 <h2> Problems - Let's do it..</h2>
 <hr>
-<div class="row">
+<div class="row problembox">
     <div class="col-md-9">
         <div class="row mx-auto" >
         {% for problem in problems %}
             <div class="col-sm-4 mx-auto mb-2">
-                <div class="card">
+                <div class="card"  style="background-color: #BEDCB9;">
                 <div class="card-body">
-                    <h5><a class="card-title" href="{% url 'problemset-problem' %}">{{ problem.title }}</h5>
+                    <h5><a class="card-title" href="{% url 'problemset-problem' problem.id %}">{{ problem.title }}</h5>
                     <p class="card-text">Points = {{problem.points}} </p>
-                    <a href="{% url 'problemset-submit_code' %}" class="btn btn-primary">Submit Your Code</a>
+                    <a href="#" class="btn btn-primary">Submit Your Code</a>
                 </div>
                 </div>
             </div>
-        {% endfor%}
+        {% endfor %}
         </div>
     </div>
     <div class="col-md-3">
@@ -46,5 +43,5 @@
     </div>
 </div>
 </div>
-</div>
+
 {% endblock %}
