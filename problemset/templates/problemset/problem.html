@@ -33,23 +33,14 @@
             }
                 {% endif %}
             </div>
-                <h1>
-                    INPUT:
-                </h1>
-                <textarea id="input">
-                </textarea>
-                <br>
+
                 <button id="submit" >{% csrf_token %} Submit</button>
-
-
             </div>
-            <div class="container pt-4">
-                <h1>
-                    OUTPUT:
-                </h1>
-                <textarea id="output" readonly>
-                </textarea>
-            </div>
+          <h1>
+        OUTPUT:
+    </h1>
+    <textarea id="output" cols="30" rows="10" readonly>
+    </textarea>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js" type="text/javascript" charset="utf-8"></script>
 
             <script>
@@ -57,21 +48,21 @@
                 editor.setTheme("ace/theme/monokai");
                 editor.session.setMode("ace/mode/c_cpp");
                 document.getElementById("submit").addEventListener("click", myFunction);
-                var URL = "{% url 'run-code' %}";
-                var run = 0;
+                var URL = "";
+                var input;
+                {% for problem in problems %}
+                    URL = "{% url 'check-code' problem.id %}";
+                    input = "{{problem.test_case | escapejs}}";
+                    console.log(input);
+                {% endfor %}
                 function myFunction() {
                         var code = editor.getValue();
-                        var input = $("textarea#input").val();
-                        var data = {'cod': code, 'input': input , 'csrfmiddlewaretoken': $.cookie('csrftoken')};
+                        var data = {'cod': code, 'input':input,'csrfmiddlewaretoken': $.cookie('csrftoken')};
                         $.post(URL, data).done(function(data){
                             $.get("/static/problemset/output.txt", function(data) {
                         $("textarea#output").val(data);
                         $('#div').html(data.replace('n',''));});
                         });
-                        if(run==0){
-                            run = run + 1;
-                            myFunction();
-                        }
                 }
             </script>
       </div>
