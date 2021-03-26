@@ -1,4 +1,4 @@
-#!/home/legend/PycharmProjects/Django_Project/venv/bin/python
+#!/home/legend/PycharmProjects/CodeStreet/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from .models import Problem, Category
-from django.views.decorators.csrf import csrf_exempt
-import subprocess
-import os
-
+from django.contrib.auth.models import User
+from .models import Category, Problem
+from django.utils import timezone
+import os, subprocess
 
 def home(request):
     problems = None
@@ -17,24 +16,12 @@ def home(request):
     data = {}
     data['problems'] = problems
     data['categories'] = categories
+    print('you are : ' ,request.session.get('email'))
     return render(request, 'problemset/home.html', data)
-
-
-def problem(request):
-    problems = Problem.get_all_objects()
-    return render(request, 'problemset/problem.html', {'problems': problems})
-
-
-def submitcode(request):
-    return render(request, 'problemset/submitcode.html')
 
 
 def discussions(request):
     return render(request, 'problemset/discussions.html')
-
-
-def register(request):
-    return render(request, 'problemset/register.html')
 
 
 def ide(request):
@@ -46,7 +33,7 @@ def run(request):
     input = request.POST.get("input")
     print(cod)
     file = open("problem.cpp", "w+")
-    file1 = open("input.txt","w+")
+    file1 = open("input.txt", "w+")
     file.write(cod)
     file1.write(input)
     print(file.read())
@@ -56,16 +43,22 @@ def run(request):
     while runcode.poll() is None:
         continue
     ps_process = subprocess.Popen(["cat", "input.txt"], stdout=subprocess.PIPE)
-    output = subprocess.Popen(['./a.out'],stdin = ps_process.stdout, stdout=subprocess.PIPE)
+    output = subprocess.Popen(['./a.out'], stdin=ps_process.stdout, stdout=subprocess.PIPE)
     ps_process.stdout.close()
-    file2 = open("problemset/static/problemset/output.txt","w+")
+    file2 = open("problemset/static/problemset/output.txt", "w+")
     file2.write(output.stdout.read().decode("utf-8"))
-    #print(output.stdout.read().decode("utf-8"))
+    # print(output.stdout.read().decode("utf-8"))
     print("P")
-    while output.poll() is None :
+    while output.poll() is None:
         continue
-    #if output.poll() is None :
+    # if output.poll() is None :
     return render(request, 'problemset/ide.html')
 
 
+def submitcode(request):
+    return render(request, 'problemset/submitcode.html')
 
+def problem(request, pk):
+    print(pk)
+    problems = Problem.get_all_objects_by_id(pk)
+    return render(request, 'problemset/problem.html', {'problems': problems})
