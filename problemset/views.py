@@ -69,10 +69,10 @@ def check(request, pk):
     file.write(cod)
     input = request.POST.get("input")
     inp = input.split("END")
+    inp = [x.replace("\r","") for x in inp]
     for inpo in inp[:-1]:
         file1 = open("input.txt", "w+")
         inputo = inpo.split("INPUT")
-        print(inputo[0])
         if inputo[0] != "None":
             file1.write(inputo[0])
         print(file.read())
@@ -89,12 +89,10 @@ def check(request, pk):
         while output.poll() is None:
             continue
         oup = output.stdout.read().decode("utf-8")
-        print(oup[:-1],inputo[1][2:-2])
-        if inputo[1][2:-2] != oup[:-1]:
+        if inputo[1][1:-1] != oup[:-1]:
             file2 = open("problemset/static/problemset/output.txt", "w+")
             file2.write("Wrong Answer")
             return render(request, 'problemset/problem.html')
-        print("CORRECT")
     file2 = open("problemset/static/problemset/output.txt", "w+")
     file2.write("Correct Answer")
     return render(request, 'problemset/problem.html')
