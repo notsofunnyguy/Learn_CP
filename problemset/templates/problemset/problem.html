@@ -53,11 +53,12 @@
                 {% for problem in problems %}
                     URL = "{% url 'check-code' problem.id %}";
                     input = "{{problem.test_case | escapejs}}";
+                    points = "{{problem.points}}";
                     console.log(input);
                 {% endfor %}
                 function myFunction() {
                         var code = editor.getValue();
-                        var data = {'cod': code, 'input':input,'csrfmiddlewaretoken': $.cookie('csrftoken')};
+                        var data = {'cod': code, 'input':input ,'points':points ,'csrfmiddlewaretoken': $.cookie('csrftoken')};
                         $.post(URL, data).done(function(data){
                             $.get("/static/problemset/output.txt", function(data) {
                         $("textarea#output").val(data);
