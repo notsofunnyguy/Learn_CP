@@ -26,7 +26,21 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3045b9f-5b2c-45f4-871e-bacfe6a4fc58" name="Default Changelist" comment="ojas" />
+    <list default="true" id="a3045b9f-5b2c-45f4-871e-bacfe6a4fc58" name="Default Changelist" comment="ojas">
+      <change afterPath="$PROJECT_DIR$/problemset/templates/problemset/leaderboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_profile_points.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/problem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/static/problemset/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/static/problemset/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/problem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +60,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/problemset/static/problemset" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -132,7 +146,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../.local/lib/python3.7/site-packages/django/db/models/base.py</url>
+          <url>file://$USER_HOME$/.local/lib/python3.7/site-packages/django/db/models/base.py</url>
           <line>517</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>

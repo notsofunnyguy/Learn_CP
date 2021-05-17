@@ -1,0 +1,21 @@
+{% extends "problemset/base.html"%}
+{% block content %}
+<div class="container-fluid">
+    <h1 style="color:White;">Leaderboard</h1>
+    <table>
+        <tr>
+            <th style="color:white;">Rank</th>
+            <th style="color:white;">Username</th>
+            <th style="color:white;">Points</th>
+        </tr>
+    {%for data in datas%}
+        <tr>
+            <td style="color:white;">{{forloop.counter}}</td>
+            <td><a href="{%url 'user-posts' data.username%}">{{data.username}}</td>
+            <td style="color:white;">{{data.points}}</td>
+        </tr>
+    {%endfor%}
+    </table>
+</div>
+
+{% endblock %}

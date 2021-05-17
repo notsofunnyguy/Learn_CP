@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.contrib.auth.models import User
+from users.models import Profile
 from .models import Category, Problem
-from django.utils import timezone
-import os, subprocess
+import subprocess
 
 def home(request):
     problems = None
@@ -64,36 +63,65 @@ def problem(request, pk):
 
 def check(request, pk):
     cod = request.POST.get("cod")
-    #print(cod)
-    file = open("problem.cpp", "w+")
-    file.write(cod)
-    input = request.POST.get("input")
-    inp = input.split("END")
-    inp = [x.replace("\r","") for x in inp]
-    for inpo in inp[:-1]:
-        file1 = open("input.txt", "w+")
-        inputo = inpo.split("INPUT")
-        if inputo[0] != "None":
-            file1.write(inputo[0])
-        print(file.read())
-        print(file1.read())
-        filename = "problem.cpp"
-        runcode = subprocess.getoutput('g++ ' + filename)
-        if runcode != "":
-            file2 = open("problemset/static/problemset/output.txt", "w+")
-            file2.write(runcode)
-            return render(request, 'problemset/problem.html')
-        ps_process = subprocess.Popen(["cat", "input.txt"], stdout=subprocess.PIPE)
-        output = subprocess.Popen(['./a.out'], stdin=ps_process.stdout, stdout=subprocess.PIPE)
-        ps_process.stdout.close()
-        while output.poll() is None:
-            continue
-        oup = output.stdout.read().decode("utf-8")
-        if inputo[1][1:-1] != oup[:-1]:
-            file2 = open("problemset/static/problemset/output.txt", "w+")
-            file2.write("Wrong Answer")
-            return render(request, 'problemset/problem.html')
-    file2 = open("problemset/static/problemset/output.txt", "w+")
-    file2.write("Correct Answer")
-    return render(request, 'problemset/problem.html')
+    points = request.POST.get("points")
+    usr = request.user
+    if usr.is_authenticated:
+        file = open("problem.cpp", "w+")
+        file.write(cod)
+        input = request.POST.get("input")
+        inp = input.split("END")
+        inp = [x.replace("\r", "") for x in inp]
+        for inpo in inp[:-1]:
+            file1 = open("input.txt", "w+")
+            inputo = inpo.split("INPUT")
+            if inputo[0] != "None":
+                file1.write(inputo[0])
+            print(file.read())
+            print(file1.read())
+            filename = "problem.cpp"
+            runcode = subprocess.getoutput('g++ ' + filename)
+            if runcode != "":
+                file2 = open("problemset/static/problemset/output.txt", "w+")
+                file2.write(runcode)
+                return render(request, 'problemset/problem.html')
+            ps_process = subprocess.Popen(["cat", "input.txt"], stdout=subprocess.PIPE)
+            output = subprocess.Popen(['./a.out'], stdin=ps_process.stdout, stdout=subprocess.PIPE)
+            ps_process.stdout.close()
+            while output.poll() is None:
+                continue
+            oup = output.stdout.read().decode("utf-8")
+            if inputo[1][1:-1] != oup[:-1]:
+                file2 = open("problemset/static/problemset/output.txt", "w+")
+                file2.write("Wrong Answer")
+                return render(request, 'problemset/problem.html')
+        file2 = open("problemset/static/problemset/output.txt", "w+")
+        file2.write("Correct Answer")
+        t = Profile.objects.get(id=usr.id - 2)
+        t.points = t.points + int(points)
+        t.save()
+        return render(request, 'problemset/problem.html')
+    else:
+        file2 = open("problemset/static/problemset/output.txt", "w+")
+        file2.write("LOGIN REQUIRED")
+        return render(request, 'problemset/problem.html')
+
+def lead(request):
+    i = 1
+    data = {"username":"" , "points":""}
+    datas = []
+    while i>0 :
+        try :
+            t = Profile.objects.get(id =i)
+        except:
+            break
+        i=i+1
+        s = str(t)
+        data["username"] = s.split(' ')[0]
+        data["points"] = t.points
+        datas.append(data.copy())
+
+    print(datas)
+    datas = sorted(datas,key = lambda i:(i['points']),reverse=True)
+    return render(request, 'problemset/leaderboard.html',{"datas":datas})
+
 
