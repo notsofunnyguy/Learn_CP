@@ -27,19 +27,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3045b9f-5b2c-45f4-871e-bacfe6a4fc58" name="Default Changelist" comment="ojas">
-      <change afterPath="$PROJECT_DIR$/problemset/templates/problemset/leaderboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0002_profile_points.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/problem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problemset/static/problemset/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/static/problemset/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/problem.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/problem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problemset/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problemset/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,32 +107,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ojas" />
     <option name="LAST_COMMIT_MESSAGE" value="ojas" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="672" y="355" width="566" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611325158925">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="672" y="355" width="566" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1611325158925" />
-    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1610466679430">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1610466679430" />
-    <state x="750" y="256" width="409" height="602" key="RollbackChangesDialog" timestamp="1611141918367">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="750" y="256" width="409" height="602" key="RollbackChangesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1611141918367" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1611329095846">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1611329095846" />
-    <state x="741" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611328860857">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="741" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1611328860857" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1611321377283">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1611321377283" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

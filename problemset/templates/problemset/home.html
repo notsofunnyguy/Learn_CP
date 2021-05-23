@@ -3,6 +3,13 @@
 <div class="container-fluid">
 <h2 style="color: #5CDB95;"> Problems - Let's do it..</h2>
 <hr>
+    {% if message %}
+    <div><h2 style="color:red">
+    {{message}}
+    </h2>
+    </div>
+{% endif %}
+
 <div class="row problembox">
     <div class="col-md-9">
         <div class="mx-auto" >

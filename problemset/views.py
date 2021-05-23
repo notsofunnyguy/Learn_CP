@@ -1,4 +1,5 @@
-from typing import final
+import random
+
 from django.shortcuts import render
 from users.models import Profile
 from .models import Category, Problem
@@ -140,5 +141,23 @@ def lead(request):
     print(datas)
     datas = sorted(datas,key = lambda i:(i['points']),reverse=True)
     return render(request, 'problemset/leaderboard.html',{"datas":datas})
+
+def sugg(request):
+    usr = request.user
+    if usr.is_authenticated:
+        t = Profile.objects.get(id=usr.id - 2)
+        i = 1
+        if t.points<=600:
+            prob  = Problem.get_all_objects_by_categoryid(5)
+        elif 1000 >= t.points > 600:
+            prob = Problem.get_all_objects_by_categoryid(6)
+        else:
+            prob = Problem.get_all_objects_by_categoryid(7)
+        probl = random.choice(prob)
+        print(probl.id)
+        problem = Problem.get_all_objects_by_id(probl.id)
+        return render(request, 'problemset/problem.html',{'problems': problem})
+    else:
+        return render(request, 'problemset/home.html', {'message': "login required"})
 
 

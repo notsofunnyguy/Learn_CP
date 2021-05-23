@@ -7,5 +7,6 @@ urlpatterns = [
     path('run/', views.run, name='run-code'),
     path('problem/<int:pk>', views.problem, name='problemset-problem'),
     path('check/<int:pk>', views.check, name='check-code'),
-    path('leaderboard',views.lead,name='leaderboard')
+    path('leaderboard',views.lead,name='leaderboard'),
+    path('suggest',views.sugg,name='suggest')
 ]
