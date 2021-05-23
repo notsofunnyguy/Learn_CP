@@ -155,8 +155,24 @@ def sugg(request):
             prob = Problem.get_all_objects_by_categoryid(7)
         probl = random.choice(prob)
         print(probl.id)
-        problem = Problem.get_all_objects_by_id(probl.id)
-        return render(request, 'problemset/problem.html',{'problems': problem})
+        problems = Problem.get_all_objects_by_id(probl.id)
+        input = problems[0].test_case
+        input = input.split("END")
+        input = [x.replace("\r", "") for x in input]
+        example = 'Example:'
+        count = 1
+        final_input = ""
+        for inp in input[0:]:
+            inpo = inp.split("INPUT")
+            if len(inpo) == 1:
+                break
+            final_input = final_input + example + ' ' + str(count) + '\n\nInput:'
+            if count == 1:
+                final_input = final_input + '\n' + inpo[0] + '\nOutput:' + inpo[1] + '\n'
+            else:
+                final_input = final_input + inpo[0] + '\nOutput:' + inpo[1] + '\n'
+            count += 1
+        return render(request, 'problemset/problem.html', {'problems': problems, 'final_input': final_input})
     else:
         return render(request, 'problemset/home.html', {'message': "login required"})
 
