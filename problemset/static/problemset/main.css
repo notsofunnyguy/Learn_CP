@@ -1,11 +1,14 @@
-
-
 .main-body {
-  background: #222831;
+  background: #0a1931;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #FFF;
 }
 
 ul {
@@ -13,9 +16,9 @@ ul {
 }
 
 #editor {
-        position: relative;
-        width: 1000px;
-        height: 500px;
+  position: relative;
+  width: 1000px;
+  height: 500px;
 }
 
 .bg-steel {
@@ -23,8 +26,8 @@ ul {
   color: green;
 }
 
-.navbar-brand .mr-4{
-    color: green;
+.navbar-brand .mr-4 {
+  color: green;
 }
 
 .subb {
@@ -32,13 +35,14 @@ ul {
   background-color: #000000;
 }
 
-.navbar-custom .navbar-brand, 
-        .navbar-custom .navbar-text { 
-            color: green; 
-} 
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: green;
+}
 
 .content-section {
-  background: #BEDCB9;
+  color: #000000;
+  background: #dbe2ef;
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -67,7 +71,7 @@ a.article-title:hover {
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+  border-bottom: 1px solid #e3e3e3;
 }
 
 .article-metadata a:hover {
@@ -92,7 +96,6 @@ a.article-title:hover {
   font-size: 2.5rem;
 }
 
-
 #input {
   position: relative;
   width: 100%;
@@ -111,3 +114,6 @@ a.article-title:hover {
   columns: 200;
 }
 
+.statement {
+  margin-top: 10px;
+}

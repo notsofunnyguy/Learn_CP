@@ -5,14 +5,18 @@
 <hr>
 <div class="row problembox">
     <div class="col-md-9">
-        <div class="row mx-auto" >
+        <div class="mx-auto" >
         {% for problem in problems %}
-            <div class="col-sm-4 mx-auto mb-2">
-                <div class="card"  style="background-color: #BEDCB9;">
+            <div class="mx-auto mb-2">
+                <div class="card"  style="background-color: #dbe2ef;">
                 <div class="card-body">
-                    <h5><a class="card-title" href="{% url 'problemset-problem' problem.id %}">{{ problem.title }}</h5>
-                    <p class="card-text">Points = {{problem.points}} </p>
-                    <a href="#" class="btn btn-primary">Submit Your Code</a>
+                    <div class="row">
+                        <h5 class="card-title ml-3"><a class="card-title" href="{% url 'problemset-problem' problem.id %}">{{ problem.title }}</a></h5>
+                        <h5 class="card-text" style="margin-left: auto; color: #0f4c75;">
+                        {{ problem.points }}
+                        </h5>
+                    </div>
+                    <a href="#" class="btn btn-primary">Submit</a>
                 </div>
                 </div>
             </div>
@@ -21,22 +25,22 @@
     </div>
     <div class="col-md-3">
         <div class="content-section">
-            <h3>Difficulty</h3>
+            <h3 style="color: #0f4c75;">Difficulty</h3>
             <p class='text-muted'>
             <ul class="list-group">
                 {% for category in categories %}
-                <a href="?category={{category.id}}"><li class="list-group-item list-group-item-light">{{ category.title }}</li></a>
+                <a href="?category={{category.id}}"><li style="color: #0f4c75;" class="list-group-item list-group-item-light">{{ category.title }}</li></a>
                 {% endfor %}
             </ul>
             </p>
         </div>
         <div class="content-section">
-            <h3> Trendings / Assignments </h3>
+            <h3 style="color: #0f4c75;"> Trendings / Assignments </h3>
             <p class='text-muted'>
             <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Top Trending Problems</li>
-                <li class="list-group-item list-group-item-light">Top Trending Posts</li>
-                <li class="list-group-item list-group-item-light">Assignments</li>
+                <li class="list-group-item list-group-item-light" style="color: #0f4c75;">Top Trending Problems</li>
+                <li class="list-group-item list-group-item-light" style="color: #0f4c75;">Top Trending Posts</li>
+                <li class="list-group-item list-group-item-light" style="color: #0f4c75;">Assignments</li>
             </ul>
             </p>
         </div>
