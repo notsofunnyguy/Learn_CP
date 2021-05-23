@@ -70,7 +70,11 @@ def problem(request, pk):
         inpo = inp.split("INPUT")
         if len(inpo)==1:
             break
-        final_input = final_input + example + ' '+ str(count) + '\n\nInput:\n' + inpo[0] + '\nOutput:' + inpo[1] + '\n'
+        final_input = final_input + example + ' '+ str(count) + '\n\nInput:'
+        if count == 1:
+            final_input = final_input + '\n' + inpo[0] + '\nOutput:' + inpo[1] + '\n'
+        else:
+            final_input = final_input + inpo[0] + '\nOutput:' + inpo[1] + '\n'
         count+=1
     return render(request, 'problemset/problem.html', {'problems': problems, 'final_input': final_input})
 
