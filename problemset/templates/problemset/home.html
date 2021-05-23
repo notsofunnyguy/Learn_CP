@@ -1,7 +1,7 @@
 {% extends "problemset/base.html"%}
 {% block content %}
 <div class="container-fluid">
-<h2> Problems - Let's do it..</h2>
+<h2 style="color: #5CDB95;"> Problems - Let's do it..</h2>
 <hr>
 <div class="row problembox">
     <div class="col-md-9">
@@ -11,12 +11,12 @@
                 <div class="card"  style="background-color: #dbe2ef;">
                 <div class="card-body">
                     <div class="row">
-                        <h5 class="card-title ml-3"><a class="card-title" href="{% url 'problemset-problem' problem.id %}">{{ problem.title }}</a></h5>
-                        <h5 class="card-text" style="margin-left: auto; color: #0f4c75;">
+                        <h5 class="card-title ml-3" ><a class="card-title" style="color: black;" href="{% url 'problemset-problem' problem.id %}">{{ problem.title }}</a></h5>
+                        <h5 class="card-text" style="margin-left: auto; color: black;">
                         {{ problem.points }}
                         </h5>
                     </div>
-                    <a href="#" class="btn btn-primary">Submit</a>
+                    <a href="#" class="btn btn-outline-info">Submit</a>
                 </div>
                 </div>
             </div>

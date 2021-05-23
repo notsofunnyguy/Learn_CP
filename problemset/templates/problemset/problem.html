@@ -6,19 +6,21 @@
         <div class="card-body">
           {% for problem in problems %}
           <div class="row">
-            <h5 class="card-title ml-3">{{ problem.title }}</h5>
-            <h5 class="card-text" style="margin-left: auto">
+            <h5 class="card-title ml-3" style="color: black">
+              {{ problem.title }}
+            </h5>
+            <h5 class="card-text" style="margin-left: auto; color: black">
               {{ problem.points }}
             </h5>
           </div>
-          <p class="card-text">{{ problem.description }}</p>
+          <p class="card-text"><pre>{{ problem.description }}</pre></p>
           {% endfor %}
         </div>
       </div>
       <div class="card statement">
         <div class="card-body">
           {% for problem in problems %}
-          <h5 class="card-title">Constraints:</h5>
+          <h5 class="card-title" style="color: black">Constraints:</h5>
           <p class="card-text">{{ problem.constraints }}</p>
           {% endfor %}
         </div>
@@ -26,8 +28,8 @@
       <div class="card statement">
         <div class="card-body">
           {% for problem in problems %}
-          <h5 class="card-title">Sample Test Cases:</h5>
-          <p class="card-text">Sample Test Cases: {{ problem.test_case }}</p>
+          <h5 class="card-title" style="color: black">Sample Test Cases:</h5>
+          <p class="card-text"><pre>{{ final_input }}</pre></p>
           {% endfor %}
         </div>
       </div>
@@ -41,7 +43,7 @@
               {% else %}//Write your c++ code here to solve this problem.
               {%endif %}
             </div>
-            <button type="submit" class="btn btn-info mt-2" id="submit">
+            <button type="submit" class="btn btn-outline-info mt-2" id="submit">
               {% csrf_token %} Submit
             </button>
           </div>

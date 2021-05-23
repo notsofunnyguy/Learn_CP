@@ -1,3 +1,4 @@
+from typing import final
 from django.shortcuts import render
 from users.models import Profile
 from .models import Category, Problem
@@ -59,7 +60,19 @@ def submitcode(request):
 def problem(request, pk):
     print(pk)
     problems = Problem.get_all_objects_by_id(pk)
-    return render(request, 'problemset/problem.html', {'problems': problems})
+    input = problems[0].test_case
+    input = input.split("END")
+    input = [x.replace("\r", "") for x in input]
+    example = 'Example:'
+    count = 1
+    final_input=""
+    for inp in input[0:]:
+        inpo = inp.split("INPUT")
+        if len(inpo)==1:
+            break
+        final_input = final_input + example + ' '+ str(count) + '\n\nInput:\n' + inpo[0] + '\nOutput:' + inpo[1] + '\n'
+        count+=1
+    return render(request, 'problemset/problem.html', {'problems': problems, 'final_input': final_input})
 
 def check(request, pk):
     cod = request.POST.get("cod")
