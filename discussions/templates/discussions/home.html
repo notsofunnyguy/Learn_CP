@@ -1,7 +1,10 @@
 {% extends "problemset/base.html" %}
 {% block content %}
+
   <div class="container">    
-      {% for post in posts %}
+  <h4 ><strong><a href="{% url 'post-create' %}" style="color: #5CDB95;">Publish a New Post</a><strong></h4>
+      
+    {% for post in posts %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
           <div class="media-body">
