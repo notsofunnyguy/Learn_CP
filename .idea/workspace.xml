@@ -27,7 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3045b9f-5b2c-45f4-871e-bacfe6a4fc58" name="Default Changelist" comment="ojas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/templates/problemset/ide.html" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/templates/problemset/ide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problemset/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problemset/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/problemset/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621805835394</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ojas">
+      <created>1621808906382</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621808906382</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

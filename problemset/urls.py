@@ -8,5 +8,7 @@ urlpatterns = [
     path('problem/<int:pk>', views.problem, name='problemset-problem'),
     path('check/<int:pk>', views.check, name='check-code'),
     path('leaderboard',views.lead,name='leaderboard'),
-    path('suggest',views.sugg,name='suggest')
+    path('suggest',views.sugg,name='suggest'),
+    path('topproblems',views.top,name='topproblems'),
+    path('assign',views.assign,name='assign')
 ]

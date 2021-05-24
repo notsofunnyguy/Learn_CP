@@ -176,4 +176,23 @@ def sugg(request):
     else:
         return render(request, 'problemset/home.html', {'message': "login required"})
 
+def top(request):
+    problems = Problem.get_all_objects()
+    probl = random.sample(list(problems),5)
+    categories = Category.get_all_objects()
+    data = {}
+    data['problems'] = probl
+    data['categories'] = categories
+    return render(request, 'problemset/home.html', data)
+
+def assign(request):
+    problems = Problem.get_all_objects()
+    probl = random.sample(list(problems),7)
+    categories = Category.get_all_objects()
+    data = {}
+    data['problems'] = probl
+    data['categories'] = categories
+    return render(request, 'problemset/home.html', data)
+
+
 

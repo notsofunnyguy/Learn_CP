@@ -45,9 +45,8 @@
             <h3 style="color: #0f4c75;"> Trendings / Assignments </h3>
             <p class='text-muted'>
             <ul class="list-group">
-                <li class="list-group-item list-group-item-light" style="color: #0f4c75;">Top Trending Problems</li>
-                <li class="list-group-item list-group-item-light" style="color: #0f4c75;">Top Trending Posts</li>
-                <li class="list-group-item list-group-item-light" style="color: #0f4c75;">Assignments</li>
+               <a href = "{% url 'topproblems' %}" ><li class="list-group-item list-group-item-light" style="color: #0f4c75;">Top Trending Problems</li></a>
+            <a href = "{% url 'assign' %}" ><li class="list-group-item list-group-item-light" style="color: #0f4c75;">Assignments</li></a>
             </ul>
             </p>
         </div>
